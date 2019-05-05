@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="signUpPage2Style.css">
+    <script src="signUpPage2Script.js"></script>
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+
+
+    <title>sign up</title>
+<body>
+<div class="header">
+    <a href="#default" class="logo" id="logo">InternFinder</a>
+
+</div>
+
+
+
+    <form>
+
+        <input type="text" name="Fname" id="FnameInput" placeholder="First Name">
+        <span id="nameCap"></span>
+        <br>
+        <input type=text" id="lName" placeholder="Last Name">
+        <br>
+        <br>
+        <br>
+        <label id="mapLable">
+            enter your address
+        </label>
+        <br>
+        <iframe
+                width="600"
+                height="450"
+                frameborder="0" style="border:0"
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAnxLwlUFX1BXVaqRnheZBJ2aeTf18BrDM&q=Space+Needle,Seattle+WA" allowfullscreen>
+        </iframe>
+        <br>
+        <span id="geoloc"></span>
+        <br>
+        <label>
+            please enter your birthday
+        </label>
+
+        <br>
+        <input type="date" id="birthDay">
+        <br>
+        <br>
+
+
+        <iframe src="https://www.youtube.com/embed/DLzxrzFCyOs" width="420" height="315" frameborder="0" allowfullscreen=""></iframe>
+        <br>
+
+        <label>captcha please move the image to the other box</label>
+        <br>
+
+        <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+        <img id="drag1" src="download.png" draggable="true" ondragstart="drag(event)" width="336" height="69">
+
+
+
+
+
+
+
+
+</form>
+
+<input type="submit" id="submitButton2" >
+</body>
+</html>

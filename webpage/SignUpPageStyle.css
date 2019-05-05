@@ -1,0 +1,83 @@
+* {box-sizing: border-box;}
+
+body {
+    background-color: azure;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    padding: 20px 10px;
+}
+
+.header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+.header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+
+.header a.active {
+    background-color: dodgerblue;
+    color: white;
+}
+
+.header-right {
+    float: right;
+}
+
+@media screen and (max-width: 500px) {
+    .header a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    .header-right {
+        float: none;
+    }
+}
+
+#signInBox{
+    width: auto;
+    height: auto;
+
+}
+
+#signUpTitle{
+    font-size: 5em;
+
+}
+.signup{
+    text-align: center;
+}
+input{
+
+    margin-top: 1em;
+    text-align: left;
+    font-size: 1.25em;
+    height: 1.5em;
+    width: 11em;
+}
+form{
+
+    font-size: 1.25em;
+    margin-top: 3em;
+}
+
+#submitButton{
+    text-align: center;
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type = "text/javascript">
+        function finalSubmit() {
+            window.location.replace("thankYou.html");
+
+        }
+        function showLocation(position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+            var latlongvalue = position.coords.latitude + ","
+                + position.coords.longitude;
+            var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
+                +latlongvalue+"&zoom=14&size=400x300&key=AIzaSyC5-r45OjCgOQJrQcUrxMH_4mf9S9vPQpk";
+            document.getElementById("mapholder").innerHTML =
+                "<img src ='"+img_url+"'>";
+        }
+        function errorHandler(err) {
+            if(err.code == 1) {
+                alert("Error: Access is denied!");
+            }else if( err.code == 2) {
+                alert("Error: Position is unavailable!");
+            }
+        }
+        function getLocation(){
+            if(navigator.geolocation){
+                // timeout at 60000 milliseconds (60 seconds)
+                var options = {timeout:60000};
+                navigator.geolocation.getCurrentPosition
+                (showLocation, errorHandler, options);
+            }else{
+                alert("Sorry, browser does not support geolocation!");
+            }
+        }
+    </script>
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+    <link rel = "stylesheet"
+          type = "text/css"
+          href = "SignUpPageStyle.css" />
+    <script src="signUpPage2Script.js"></script>
+    <title>sign Up</title>
+</head>
+<body>
+<div class="header">
+    <a href="#default" class="logo" id="logo">InternFinder</a>
+
+</div>
+
+<form>
+    <div id ="dropDownList">
+        <label>What is the time frame of the internship you are looking for?</label>
+        <select>
+            <option value="summerInternship">Summer Internship</option>
+            <option value="springInternship">Spring Internship</option>
+            <option value="winterInternship">Winter Internship</option>
+            <option value="FallInternship ">Fall Internship</option>
+        </select>
+
+    </div>
+    <br>
+    <div id="outputName">
+    </div>
+    <br>
+
+    <div id ="address">
+        <label>
+            please enter your address?
+        </label>
+        <input type="text" id="addressInput">
+
+    </div>
+    <br>
+    <div id="salaryRange">
+
+        <div class="range-slider">
+            <label>
+                what salary are you looking for in dollars?
+            </label>
+            <input type="range" id="salery" value="450" min="0" max="100000"
+                   oninput="document.getElementById('saleryRange').innerHTML = this.value" />
+            <label id="saleryRange"></label>
+        </div>
+        <br>
+        <br>
+
+
+        <div>
+            <label>
+                please tell us about some of your projects
+            </label>
+            <textarea maxlength="244"></textarea>
+        </div>
+
+
+
+
+        <div id="mapholder"></div>
+        <form>
+            <input type="button" onclick="getLocation();" value="Your Location"/>
+        </form>
+
+        <div>
+            <input type="button" onclick="" >
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</form>
+</body>
+
+</html>

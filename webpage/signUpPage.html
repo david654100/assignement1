@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $("#SubmitButton").hide();
+    </script>
+
+    <script src="signUpPageScript.js"></script>
+    <link rel = "stylesheet"
+          type = "text/css"
+          href = "SignUpPageStyle.css" />
+    <meta charset="UTF-8">
+    <title>InternFinder</title>
+
+
+</head>
+
+<body>
+
+<div class="header">
+    <a href="#default" class="logo" id="logo">InternFinder</a>
+    <div class="header-right">
+        <a class="active" href="#login" id="loginButton">login</a>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="signup" >
+    <div id="signUpTitle">
+        Sign up
+    </div>
+    <div id="signInBox">
+
+        <form>
+
+            <input type="text" name="username" id="userNameInput" placeholder="Username">
+            <span id="usernameConfirmation"></span>
+            <br>
+            <span id="invalidUsernameMessages"></span>
+           <br>
+
+
+            <input type="email" name="email" id="userEmail" placeholder="Email">
+            <br>
+
+
+
+            <input type="password" name="password" id="password" placeholder="Password" >
+            <span id="passwordNullMessage"></span>
+            <br>
+
+            <input type="password" name="passwordConfirmation" id="passwordConformation" placeholder="Password Conformation">
+            <div id="passwordConfirmationMessage"></div>
+
+            <div >
+                <input type="submit" id="submitButton">
+            </div>
+
+
+           <!--  <input type="submit" value="Submit" id="submitButton"><br>-->
+
+        </form>
+
+
+    </div>
+</div>
+</body>
+</html>
