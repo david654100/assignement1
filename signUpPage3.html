@@ -8,54 +8,13 @@
             window.location.replace("thankYou.html");
 
         }
-        function showLocation(position) {
-            var latitude = position.coords.latitude;
-            var longitude = position.coords.longitude;
-            var latlongvalue = position.coords.latitude + ","
-                + position.coords.longitude;
-            var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
-                +latlongvalue+"&zoom=14&size=400x300&key=AIzaSyC5-r45OjCgOQJrQcUrxMH_4mf9S9vPQpk";
-            document.getElementById("mapholder").innerHTML =
-                "<img src ='"+img_url+"'>";
-        }
-        function errorHandler(err) {
-            if(err.code == 1) {
-                alert("Error: Access is denied!");
-            }else if( err.code == 2) {
-                alert("Error: Position is unavailable!");
-            }
-        }
-        function getLocation(){
-            if(navigator.geolocation){
-                // timeout at 60000 milliseconds (60 seconds)
-                var options = {timeout:60000};
-                navigator.geolocation.getCurrentPosition
-                (showLocation, errorHandler, options);
-            }else{
-                alert("Sorry, browser does not support geolocation!");
-            }
-        }
-    </script>
-    <script>
-        function allowDrop(ev) {
-            ev.preventDefault();
-        }
 
-        function drag(ev) {
-            ev.dataTransfer.setData("text", ev.target.id);
-        }
-
-        function drop(ev) {
-            ev.preventDefault();
-            var data = ev.dataTransfer.getData("text");
-            ev.target.appendChild(document.getElementById(data));
-        }
     </script>
     <link rel = "stylesheet"
           type = "text/css"
           href = "SignUpPageStyle.css" />
     <script src="signUpPage2Script.js"></script>
-    <title>sign Up</title>
+    <title> intern systems sign Up three</title>
 </head>
 <body>
 <div class="header">
@@ -87,6 +46,75 @@
 
     </div>
     <br>
+    <div>
+        <label>
+            please enter the city you are from?
+
+        </label>
+        <input type="text" id="city">
+
+    </div>
+
+    <div>
+        <label>
+            please enter the state you are from?
+        </label>
+        <select name="state" id="state">
+            <option value="" selected="selected">Select a State</option>
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option>
+            <option value="CA">California</option>
+            <option value="CO">Colorado</option>
+            <option value="CT">Connecticut</option>
+            <option value="DE">Delaware</option>
+            <option value="DC">District Of Columbia</option>
+            <option value="FL">Florida</option>
+            <option value="GA">Georgia</option>
+            <option value="HI">Hawaii</option>
+            <option value="ID">Idaho</option>
+            <option value="IL">Illinois</option>
+            <option value="IN">Indiana</option>
+            <option value="IA">Iowa</option>
+            <option value="KS">Kansas</option>
+            <option value="KY">Kentucky</option>
+            <option value="LA">Louisiana</option>
+            <option value="ME">Maine</option>
+            <option value="MD">Maryland</option>
+            <option value="MA">Massachusetts</option>
+            <option value="MI">Michigan</option>
+            <option value="MN">Minnesota</option>
+            <option value="MS">Mississippi</option>
+            <option value="MO">Missouri</option>
+            <option value="MT">Montana</option>
+            <option value="NE">Nebraska</option>
+            <option value="NV">Nevada</option>
+            <option value="NH">New Hampshire</option>
+            <option value="NJ">New Jersey</option>
+            <option value="NM">New Mexico</option>
+            <option value="NY">New York</option>
+            <option value="NC">North Carolina</option>
+            <option value="ND">North Dakota</option>
+            <option value="OH">Ohio</option>
+            <option value="OK">Oklahoma</option>
+            <option value="OR">Oregon</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="RI">Rhode Island</option>
+            <option value="SC">South Carolina</option>
+            <option value="SD">South Dakota</option>
+            <option value="TN">Tennessee</option>
+            <option value="TX">Texas</option>
+            <option value="UT">Utah</option>
+            <option value="VT">Vermont</option>
+            <option value="VA">Virginia</option>
+            <option value="WA">Washington</option>
+            <option value="WV">West Virginia</option>
+            <option value="WI">Wisconsin</option>
+            <option value="WY">Wyoming</option>
+        </select>
+    </div>
+    <br>
     <div id="salaryRange">
 
         <div class="range-slider">
@@ -107,21 +135,6 @@
             </label>
             <textarea maxlength="244"></textarea>
         </div>
-
-
-
-
-        <div id="mapholder"></div>
-        <form>
-            <input type="button" onclick="getLocation();" value="Your Location"/>
-        </form>
-
-        <div>
-            <input type="button" onclick="" >
-        </div>
-
-
-
 
 
 
